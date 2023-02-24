@@ -4,6 +4,7 @@
     "backend:install": "cd backend && npm install",
     "frontend:build": "cd frontend && npm run build",
     "backend:build": "cd backend && npm run build",
-    "frontend:deploy": "cd frontend && npm run deploy"
+    "frontend:deploy": "cd frontend && npm run deploy",
+    "backend:deploy": "cd backend && npm run deploy"
   }
 }

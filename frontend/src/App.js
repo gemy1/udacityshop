@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Products from "./components/products";
 import ProductAdd from "./components/product-add";
-const api = "http://localhost:4000/api/";
+const api =
+  "http://backend-env.eba-r95tcg6m.us-east-1.elasticbeanstalk.com/api/";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -11,7 +12,7 @@ function App() {
   const getProducts = async () => {
     const respons = await fetch(`${api}products`);
     const data = await respons.json();
-    if (!("products" in data)) {
+    if (!("products" in data) || !data) {
       setError("No conection to database");
     }
     setProducts(data.products.reverse());

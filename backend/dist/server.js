@@ -18,7 +18,7 @@ app.use((0, cors_1.default)());
 //Routes
 app.use("/api", routes_1.default);
 app.get("/", (req, res) => {
-    res.status(200).send("Welcome to ouer api");
+    res.status(200).send("Welcome to ouer api 2");
 });
 // Handle Any Other Routes
 app.use((req, res) => {

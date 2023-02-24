@@ -6,9 +6,14 @@ const api = "http://localhost:4000/api/";
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+
   const getProducts = async () => {
     const respons = await fetch(`${api}products`);
     const data = await respons.json();
+    if (!("products" in data)) {
+      setError("No conection to database");
+    }
     setProducts(data.products.reverse());
     return data.products;
   };
@@ -45,6 +50,7 @@ function App() {
     <div className="App App-header">
       <ProductAdd onAddProduct={onAddProduct} />
       <Products products={products} onDelete={deleteProductHandler} />
+      {error && "NO conection to database"}
     </div>
   );
 }

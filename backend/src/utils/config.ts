@@ -9,6 +9,7 @@ const {
   POSTGRES_PASSWORD,
   ENV,
   PORT,
+  JWT_SECRET,
 } = process.env;
 
 const config = {
@@ -19,6 +20,7 @@ const config = {
   POSTGRES_PASSWORD,
   ENV,
   PORT,
+  JWT_SECRET,
 };
 
 export default config;

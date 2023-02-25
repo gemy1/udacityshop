@@ -3,25 +3,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const dotenv_1 = __importDefault(require("dotenv"));
+const config_1 = __importDefault(require("./utils/config"));
 const pg_1 = require("pg");
-dotenv_1.default.config();
-const { POSTGRES_HOST, POSTGRES_DB, POSTGRES_DB_TEST, POSTGRES_USER, POSTGRES_PASSWORD, ENV, } = process.env;
 let client;
-if (ENV === "test") {
+if (config_1.default.ENV === "test") {
     client = new pg_1.Pool({
-        host: POSTGRES_HOST,
-        database: POSTGRES_DB_TEST,
-        user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD,
+        host: config_1.default.POSTGRES_HOST,
+        database: config_1.default.POSTGRES_DB_TEST,
+        user: config_1.default.POSTGRES_USER,
+        password: config_1.default.POSTGRES_PASSWORD,
     });
 }
-if (ENV === "dev") {
+if (config_1.default.ENV === "dev") {
     client = new pg_1.Pool({
-        host: POSTGRES_HOST,
-        database: POSTGRES_DB,
-        user: POSTGRES_USER,
-        password: POSTGRES_PASSWORD,
+        host: config_1.default.POSTGRES_HOST,
+        database: config_1.default.POSTGRES_DB,
+        user: config_1.default.POSTGRES_USER,
+        password: config_1.default.POSTGRES_PASSWORD,
     });
 }
 exports.default = client;

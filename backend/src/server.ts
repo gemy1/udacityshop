@@ -1,13 +1,13 @@
 import express, { Request, Response } from "express";
-import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cors from "cors";
 import router from "./routes";
-dotenv.config();
-const port = process.env.PORT || 4000;
+import config from "./utils/config";
+
+const port = config.PORT || 4000;
 
 const app: express.Application = express();
-const address: string = "127.0.0.1:3000";
+const address: string = "127.0.0.1:4000";
 
 // Middlewares
 app.use(bodyParser.json());

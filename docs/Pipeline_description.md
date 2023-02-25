@@ -44,3 +44,17 @@ jobs:
           command: |
             npm run backend:deploy
 `
+
+# Explenation
+
+- First is the version of circelci
+- Second is the orbs needed to prepare the environment
+- Third is the jops
+- create the environment with dependencies
+- then run the command from the main package.json
+- install the dependencies for the frontend
+- install the dependencies for the backend
+- build the frontend for production
+- build the backend for production
+- deploy the frontend to AWS S3
+- deploy the backend to AWS Elastic Beanstalk

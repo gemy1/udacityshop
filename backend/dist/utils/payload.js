@@ -4,11 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const config_1 = __importDefault(require("./config"));
 const payload = (req) => {
     try {
         const authorizationHeader = req.headers.authorization;
         const token = authorizationHeader.split(" ")[1];
-        const payload = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
+        const payload = jsonwebtoken_1.default.verify(token, config_1.default.JWT_SECRET);
         return payload;
     }
     catch (err) {

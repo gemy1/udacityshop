@@ -17,7 +17,7 @@ app.use(cors());
 app.use("/api", router);
 
 app.get("/", (req, res) => {
-  res.status(200).send("Welcome to ouer api 2");
+  res.status(200).send("Welcome to ouer api 3");
 });
 
 // Handle Any Other Routes

@@ -36,7 +36,7 @@ jobs:
           name: Deploy backend
           command: |
             npm run backend:deploy
-            eb POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+            eb setenv POSTGRES_PASSWORD=$POSTGRES_PASSWORD
           environment:
             POSTGRES_PASSWORD: $POSTGRES_PASSWORD
 workflows:

@@ -43,6 +43,7 @@ workflows:
   build:
     jobs:
       - build:
+          context: ENV
           filters:
             branches:
               only:

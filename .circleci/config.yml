@@ -36,3 +36,14 @@ jobs:
           name: Deploy backend
           command: |
             npm run backend:deploy
+          environment:
+            POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - main
